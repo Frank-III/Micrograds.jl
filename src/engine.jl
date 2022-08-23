@@ -22,11 +22,11 @@ Value{R}(d::R, label::String, _children, op) where {R <: AbstractFloat} =
 Base.show(io::IO, val::Value) = print(io, "Value($(val.label),data=$(val.data))")
 
 #some get Function
-@inline label(v::Value) = v.label
+#@inline label(v::Value) = v.label
 
-@inline val(v::Value) = v.data
+#@inline val(v::Value) = v.data
 
-@inline grad(v::Value) = v.grad
+#@inline grad(v::Value) = v.grad
 
 
 

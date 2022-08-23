@@ -16,7 +16,7 @@ function (a::Neuron)(x::AbstractVector)
     x = (eltype(x) <: Value) ? x : Value{eltype(x)}.(x)
     act = sum(a.w .* x) + a.b
     out = tanh(act)
-    return out
+    out
 end
 
 struct Layer <: Modules
