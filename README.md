@@ -4,7 +4,6 @@ A Julia implementation of Andrej's [micrograd](https://github.com/karpathy/micro
 
 ## Example 
 ### use of simple autograd engine
-#### draw 
 ```Julia
 using Micrograds
 defaultVal = Value{Float64}
