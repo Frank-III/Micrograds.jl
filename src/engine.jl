@@ -19,7 +19,7 @@ Value{R}(d::R, label::String, _children, op) where {R <: AbstractFloat} =
     Value{R}(data=d, label=label, _prev=_children, _op = op)
 
 #show function
-Base.show(io::IO, val::Value) = print(io, "Value(data=$(val.data))")
+Base.show(io::IO, val::Value) = print(io, "Value($(val.label),data=$(val.data))")
 
 #some get Function
 @inline label(v::Value) = v.label

@@ -8,6 +8,7 @@ micrograd:
 
 module Micrograds
 
+using Random
 import Base.@kwdef
 import Base.+, Base.*, Base.^, Base.-, Base./, Base.tanh
 
