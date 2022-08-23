@@ -17,5 +17,5 @@ drawgraph(f)
 ```
 ![simple_graph](./simple_graph.svg)
 
-### use of simple nn to train batched data
+### use simple `nn` engine to train batched data
 todo
