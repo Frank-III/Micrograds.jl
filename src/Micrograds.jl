@@ -12,7 +12,7 @@ import Base.@kwdef
 import Base.+, Base.*, Base.^, Base.-, Base./, Base.tanh
 
 
-export Value, defaultVal, backward, +, -, ^, -, /, *, tanh, relu, trace, drawgraph
+export Value, defaultVal, backward, +, -, ^, -, /, *, tanh, relu, trace, drawgraph, Neuron, Layer, MLP, parameters, zero_grad
 
 include("engine.jl")
 include("draw_graph.jl")
