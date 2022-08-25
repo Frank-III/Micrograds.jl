@@ -6,6 +6,8 @@ should be fully functional right now, waiting for further integration with `Grap
 
 ## Example 
 ### use of simple autograd engine
+
+
 ```Julia
 using Micrograds
 defaultVal = Value{Float64}
@@ -26,6 +28,25 @@ drawgraph(f)
 ![grad_plot](./grad_plot.svg)
 
 ### basic use of simple `nn` engine 
+#### `draw_graph` with Neuron
+```Julia
+julia> n = Neuron(2)
+relu Neuron(2)
+
+julia> x = [1., -2.]
+2-element Vector{Float64}:
+  1.0
+ -2.0
+
+julia> y = n(x)
+Value(,data=0.6758447934023317)
+
+drawgraph(y)
+```
+![gout](./gout.svg)
+
+
+#### `MLP` class and `zero_grad` function
 ```Julia
 julia> model = MLP(2, [16, 16, 1])
 MLP of [Layer of [relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2), relu Neuron(2)], Layer of [relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16), relu Neuron(16)], Layer of [Linear Neuron(16)]]
