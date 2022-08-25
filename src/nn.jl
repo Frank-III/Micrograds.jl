@@ -2,7 +2,7 @@
 abstract type Modules end
 
 function zero_grad(x::Modules)
-    getfield.(parameters(x), :grad) .= 0
+    setfield!.(parameters(x), :grad, 0.)
 end
 
 struct Neuron <: Modules
