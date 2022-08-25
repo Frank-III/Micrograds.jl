@@ -1,4 +1,3 @@
-using Micrograds
 
 function trace(root::Value)
 	# builds a set of all nodes and edges in a graph

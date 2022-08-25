@@ -38,6 +38,15 @@ function +(v::Value, other::Value)
 
     out
 end
+# how to dispatch on this?
+function +(v::Value, other::Real)
+    o = Value{typeof(v.data)}(other)
+    v + o
+end
+
++(v::Real, other::Value) = other + v
+
+
 
 function *(v::Value, other::Value)
     out = Value{typeof(v.data)}(data = v.data * other.data, _prev = Set([v, other]), _op="*")
@@ -47,6 +56,13 @@ function *(v::Value, other::Value)
 
     out
 end
+
+function *(v::Value, other::Real)
+    o = Value{typeof(v.data)}(other)
+    v * o
+end
+
+*(v::Real, other::Value) = other * v
 
 function -(v::Value, other::Value)
     v + Value{typeof(other.data)}(-1.) * other
