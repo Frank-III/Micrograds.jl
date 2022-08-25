@@ -33,4 +33,10 @@ function test2()
     @show y.data, x.grad
 end
 
-test2()
+function test3()
+    n = Neuron(3)
+    x = 3 .* rand(3) .+ 2
+    y = n(x)
+    backward(y)
+    drawgraph(y)
+end
