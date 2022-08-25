@@ -22,6 +22,7 @@ function test1()
     #backward(d)
     #@show  d.grad, e.grad, c.grad, a.grad, b.grad
 end
+test1()
 
 function test2()
     x = defaultVal(-4.)

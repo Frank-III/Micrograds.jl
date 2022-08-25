@@ -41,5 +41,5 @@ end
 
 function drawgraph(root::Value)
     dot, node_labels = makegraph(root)
-    gplot(dot, nodelabel = node_labels, nodelabelc="white")
+    plot(dot,node_labels, node_style="draw, rounded corners, fill=blue!10")
 end

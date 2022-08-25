@@ -28,8 +28,6 @@ Base.show(io::IO, val::Value) = print(io, "Value($(val.label),data=$(val.data))"
 
 #@inline grad(v::Value) = v.grad
 
-
-
 function +(v::Value, other::Value)
     out = Value{typeof(v.data)}(data = v.data + other.data, _prev = Set([v, other]), _op = "+")
 
@@ -45,8 +43,6 @@ function +(v::Value, other::Real)
 end
 
 +(v::Real, other::Value) = other + v
-
-
 
 function *(v::Value, other::Value)
     out = Value{typeof(v.data)}(data = v.data * other.data, _prev = Set([v, other]), _op="*")
@@ -64,8 +60,8 @@ end
 
 *(v::Real, other::Value) = other * v
 
-function -(v::Value, other::Value)
-    v + Value{typeof(other.data)}(-1.) * other
+function -(v::Value, other::Union{Value, Real})
+    v + -1. * other
 end
 
 function ^(v::Value, other::Real)
