@@ -7,7 +7,7 @@ micrograd:
 
 module Micrograds
 
-using Random, Graphs, GraphPlot, Printf
+using Random, Graphs, GraphRecipes, Plots, Printf
 import Base.@kwdef
 import Base.+, Base.*, Base.^, Base.-, Base./, Base.tanh
 

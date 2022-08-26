@@ -39,7 +39,7 @@ function makegraph(root::Value)
     dot, node_labels
 end
 
-function drawgraph(root::Value)
+function drawgraph(root::Value;kwargs...)
     dot, node_labels = makegraph(root)
-    gplot(dot, nodelabel = node_labels, nodelabelc="white")
+    graphplot(dot, names=node_labels, nodeshape=:rect, curves=false, kwargs...)
 end
