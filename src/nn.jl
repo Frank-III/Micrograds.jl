@@ -35,7 +35,7 @@ struct Layer <: Modules
 end
 
 function (a::Layer)(x::AbstractVector)
-    outs = (a.n).(x)
+    outs = map(n->n(x), a.neurons)
     length(outs) == 1 ? outs[1] : outs
 end
 
